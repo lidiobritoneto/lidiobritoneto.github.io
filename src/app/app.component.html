@@ -1,22 +1,27 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand">TodoAPP - Por Lidio BRITO NETO</a>
+  <a class="navbar-brand">Tarefas Diárias - Por Lidio BRITO NETO</a>
 </nav>
 <div class="container mt-4">
-<h3>Todos</h3>
+<h3>Lista de Tarefas Diárias</h3>
 <hr/>
 <form [formGroup]="form"(ngSubmit)="submit()">
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <input type="text" class="form-control" formControlName="description"/>
   </div>
   <div class="col-md-1">
-    <button type="submit" [disabled]="(!form.valid)" 
-  class="btn btn-primary">Add</button>
+    
   </div>
 </div>
 <hr/>
 
 </form>
+
+
+  <button type="submit" [disabled]="(!form.valid)" 
+   class="btn btn-primary btn-block"  expand="full">Adicionar Tarefa</button>
+  
+
 <hr/>
 <div class="row">
   <div class="col-md-7">
@@ -29,8 +34,8 @@
       <div class="btn-group">
         <button class="btn btn-success" 
         [disabled]="todo.done" 
-        (click)="done(todo)">Done</button>
-        <button class="btn btn-danger" (click)="delete(todo)" >Delete</button>
+        (click)="done(todo)">Realizada</button>
+        <button class="btn btn-danger" (click)="delete(todo)" >Deletar</button>
 
       </div>
       </li>
